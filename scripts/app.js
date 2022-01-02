@@ -37,7 +37,6 @@ const changeCurrentSlideNumber = (isForward, isStartup = false, forcedSlideNumbe
 		}
 	}
 	changeCurrentSlide();
-	console.log(currentSlide);
 };
 
 const changeCurrentSlide = () => {
@@ -72,3 +71,5 @@ prevBtn.addEventListener('click', () => changeCurrentSlideNumber(false));
 nextBtn.addEventListener('click', () => changeCurrentSlideNumber(true));
 
 changeCurrentSlideNumber(null, true);
+
+setInterval(() => changeCurrentSlideNumber(true, false, null), 4000);
