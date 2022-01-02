@@ -1,3 +1,8 @@
+:root {
+	--background-color-1: #ecf0f1;
+	--background-color-2: #2c3e50;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -12,14 +17,16 @@ body {
 	align-items: center;
 	justify-content: center;
 	font-size: 1rem;
-	background-color: #ecf0f1;
+	background-color: var(--background-color-1);
 }
 
 .slider-container {
 	width: 60%;
+	min-width: 1000px;
 	height: 70vh;
+	min-height: 500px;
 	position: relative;
-	background-color: #2c3e50;
+	background-color: var(--background-color-2);
 	overflow: hidden;
 	border-radius: 1em;
 	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
@@ -61,7 +68,7 @@ body {
 	width: 3.25em;
 	height: 3.25em;
 	padding: 0.65em;
-	background-color: #ecf0f1;
+	background-color: var(--background-color-1);
 	position: absolute;
 	top: 45%;
 	border-radius: 50%;
@@ -76,11 +83,11 @@ body {
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
-	transition: transform 0.2s linear, opacity 0.2s linear;
-	-webkit-transition: transform 0.2s linear, opacity 0.2s linear;
-	-moz-transition: transform 0.2s linear, opacity 0.2s linear;
-	-ms-transition: transform 0.2s linear, opacity 0.2s linear;
-	-o-transition: transform 0.2s linear, opacity 0.2s linear;
+	transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-moz-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-ms-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-o-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .slider-container .prev-btn {
@@ -102,12 +109,16 @@ body {
 }
 
 .slider-container:hover :is(.prev-btn, .next-btn) {
-	opacity: 1;
+	opacity: 0.5;
 	transform: translateX(0);
 	-webkit-transform: translateX(0);
 	-moz-transform: translateX(0);
 	-ms-transform: translateX(0);
 	-o-transform: translateX(0);
+}
+
+.slider-container:hover :is(.prev-btn, .next-btn):hover {
+	opacity: 0.75;
 }
 
 .slider-container .next-btn img {
@@ -132,7 +143,7 @@ body {
 	display: inline-block;
 	margin: 0 0.35em;
 	background-color: transparent;
-	border: 4px solid #ecf0f1;
+	border: 3px solid var(--background-color-1);
 	cursor: pointer;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -147,9 +158,9 @@ body {
 }
 
 .slider-container .dots-container > .dot:hover {
-	background-color: #ecf0f1;
+	background-color: var(--background-color-1);
 }
 
 .slider-container .dots-container > .dot.active {
-	background-color: #ecf0f1;
+	background-color: var(--background-color-1);
 }
